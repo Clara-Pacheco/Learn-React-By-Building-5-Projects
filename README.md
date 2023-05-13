@@ -7,3 +7,9 @@ Furthermore, the project includes input fields that allow users to enter informa
 Despite its simplicity, this project effectively demonstrates how React can be used to manage states and dynamically display user input. By utilizing these key concepts, developers can create more complex and dynamic applications that provide a more engaging user experience.
 
 # Project 02 - ToDo List Application:
+
+The core concept of this project is to enable users to enter tasks or items into an input field, which are then added to a list below once the button is clicked. This simple yet effective system creates a practical and organized approach to task management, allowing users to easily view and access their tasks.
+
+In addition, the project offers a delete button next to each task, providing users with the option to remove any previously added items with ease. This enhances the overall functionality and convenience of the task management system, making it an effective solution for organizing tasks and staying on top of one's to-do list.
+
+What makes this project even more interesting is that it offers valuable learning opportunities. Users can learn how to work with arrays and lists, manipulate array states, and utilize the useRef and useState hooks. By practicing and implementing these important skills, users can develop a better understanding of React and improve their ability to create more complex and dynamic applications.
