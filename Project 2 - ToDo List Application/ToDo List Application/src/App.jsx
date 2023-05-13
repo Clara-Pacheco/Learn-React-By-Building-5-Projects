@@ -36,7 +36,11 @@ export function App() {
           }}
         />
         <button
+          className="addbtn"
           onClick={() => {
+            if(inputTask.current.value == "") {
+              return
+            }
             settodoList([...todoList, {task:currentTask, completed: false}])
             inputTask.current.value = ""
             setCurrentTask("")
