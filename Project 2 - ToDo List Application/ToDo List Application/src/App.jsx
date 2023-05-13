@@ -9,6 +9,12 @@ export function App() {
 
   const inputTask = useRef(null)
 
+  const deleteItem = (taskToDelete) => {
+    settodoList(todoList.filter((task) => {
+        return task !== taskToDelete
+    }))
+  }
+
   return(
     <div className="app"> 
 
@@ -27,6 +33,7 @@ export function App() {
           onClick={() => {
             settodoList([...todoList, currentTask])
             inputTask.current.value = ""
+            setCurrentTask("")
           }}
         >
           Add Task
@@ -35,9 +42,17 @@ export function App() {
       <hr />
       <ul className="list">
         {
-          todoList.map((task)=>{
+          todoList.map((task, key)=>{
             return(
-              <li key={task}>{task}</li>
+              <div
+                 key={key}
+                 className="tasksDisplayed"
+              >
+                <li>{task}</li>
+                <button onClick={() => {deleteItem(task)}}>X</button>
+
+              </div>
+              
             )
           })
         }
