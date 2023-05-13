@@ -55,3 +55,12 @@ ul li {
   align-items: center;
   padding: 5px;
 }
+
+.tasksDisplayed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tasksDisplayed button {
+  width: 50px;
+}
