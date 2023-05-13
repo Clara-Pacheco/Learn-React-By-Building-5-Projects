@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 import "./App.css"
 
@@ -7,6 +7,7 @@ export function App() {
   const [todoList, settodoList] = useState([])
   const [currentTask, setCurrentTask] = useState("")
 
+  const inputTask = useRef(null)
 
   return(
     <div className="app"> 
@@ -15,6 +16,7 @@ export function App() {
 
       <div className="task">
         <input
+          ref={inputTask}
           type="text"
           placeholder="Enter Task"
           onChange={(event) => {
@@ -24,13 +26,14 @@ export function App() {
         <button
           onClick={() => {
             settodoList([...todoList, currentTask])
+            inputTask.current.value = ""
           }}
         >
           Add Task
         </button>
       </div>
       <hr />
-      <div className="list">
+      <ul className="list">
         {
           todoList.map((task)=>{
             return(
@@ -38,7 +41,7 @@ export function App() {
             )
           })
         }
-      </div>
+      </ul>
     
     </div>
   )
