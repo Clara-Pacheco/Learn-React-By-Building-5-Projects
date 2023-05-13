@@ -9,6 +9,12 @@ export function App() {
 
   const inputTask = useRef(null)
 
+  const addTask = () => {
+    settodoList([...todoList, {task:currentTask, completed: false}])
+    inputTask.current.value = ""
+    setCurrentTask("")
+  }
+
   const deleteItem = (taskToDelete) => {
     settodoList(todoList.filter((task) => {
         return task.task !== taskToDelete
@@ -31,6 +37,9 @@ export function App() {
           ref={inputTask}
           type="text"
           placeholder="Enter Task"
+          onKeyDown={(event) =>{if(event.keyCode ==13){
+            addTask()
+          }}}
           onChange={(event) => {
             setCurrentTask(event.target.value)
           }}
@@ -41,9 +50,7 @@ export function App() {
             if(inputTask.current.value == "") {
               return
             }
-            settodoList([...todoList, {task:currentTask, completed: false}])
-            inputTask.current.value = ""
-            setCurrentTask("")
+            addTask()
           }}
         >
           Add Task
