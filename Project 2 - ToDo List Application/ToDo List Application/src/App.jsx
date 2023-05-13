@@ -66,7 +66,7 @@ export function App() {
                  className="tasksDisplayed"
               >
                 <li>{task.task}</li>
-                <button onClick={() =>{completeTask(task.task)}}>Completed</button>
+                <button onClick={() =>{completeTask(task.task)}}>{task.completed ? 'Completed' : 'Complete'}</button>
                 <button className="btn" onClick={() => {deleteItem(task.task)}}>X</button>
                 {
                   task.completed ? <h1>Task completed</h1> : <h1>Task not completed</h1>
